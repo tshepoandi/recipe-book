@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-
+import '@splidejs/splide/css';
 function Popular() {
     const [popular,setPopular] = useState([])
     useEffect(()=>{
