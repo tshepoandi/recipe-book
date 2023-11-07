@@ -1,7 +1,10 @@
+import Home from "./Pages/Home";
+import Pages from "./Pages/Pages";
+
 function App() {
   return (
     <div>
-      <h1>sup</h1>
+      <Pages/>
     </div>
   );
 }

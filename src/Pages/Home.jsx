@@ -1,8 +1,13 @@
 import React from 'react'
+import Veggie from '../Components/Veggie'
+import Popular from '../Components/Popular'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <Veggie/>
+      <Popular/>
+    </div>
   )
 }
 
