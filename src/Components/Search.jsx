@@ -2,12 +2,18 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import {FaSearch} from 'react-icons/fa'
 
-function Search() {
+function Searched() {
+  const [input,setInput] = useState("");
+  const submitHandler = (e)=>{
+    console.log("lets see .....")
+    e.preventDefault()
+  }
+  
   return (
-    <FormStyle>
+    <FormStyle onSubmit={submitHandler}>
       <NeededDiv>
       <StyledSVG></StyledSVG>
-      <Input type='text'/>
+      <Input onChange={(e)=>{ setInput(e.target.value)}} type='text' placeholder={"Ho jewa eng today?"}/>
       </NeededDiv>
       
     </FormStyle>
@@ -41,8 +47,8 @@ top :50%;
 left:0;
 transform: translate(100%,-50%);
 color:black;
-
+cursor:pointer;
 
 `
 
-export default Search
+export default Searched
