@@ -29,10 +29,10 @@ function Popular() {
 
            options={{
             perPage:3,
-            arrows:false,
+            arrows:true,
             pagination:false,
             drag:"free",
-            gap:"5rem"
+            gap:"1.2rem"
           }}
         >
           {popular.map((recipe,index)=>{
@@ -57,6 +57,7 @@ export const Wrapper = styled.div`
 `
 
 const Gradient = styled.div`
+  border-radius:2rem;
   z-index:3;
   position: absolute;
   width: 100%;
