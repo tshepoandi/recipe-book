@@ -1,11 +1,11 @@
 import React from 'react'
 
-function handleSearch() {
+function HandleSearch() {
   return (
     <div>
-      
+      <h1>okay</h1>
     </div>
   )
 }
 
-export default handleSearch
+export default HandleSearch

@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import {FaSearch} from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom';
 
 function Searched() {
   const [input,setInput] = useState("");
+  const navigate = useNavigate()
   const submitHandler = (e)=>{
     console.log("lets see .....")
     e.preventDefault()
+    navigate("/searched/" + input)
   }
   
   return (
     <FormStyle onSubmit={submitHandler}>
       <NeededDiv>
-      <StyledSVG></StyledSVG>
+      <StyledSVG onClick={submitHandler}></StyledSVG>
       <Input onChange={(e)=>{ setInput(e.target.value)}} type='text' placeholder={"Ho jewa eng today?"}/>
       </NeededDiv>
       
