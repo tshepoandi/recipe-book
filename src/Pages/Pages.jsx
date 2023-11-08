@@ -6,9 +6,7 @@ import Cuisine from './Cuisine'
 function Pages() {
   return (
     <div></div>
-    // <BrowserRouter>
-        
-    // </BrowserRouter>
+
   )
 }
 
