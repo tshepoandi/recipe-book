@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import {FaSearch} from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
+import {BiHomeAlt2} from 'react-icons/bi'
 
 function Searched() {
   const [input,setInput] = useState("");
@@ -17,6 +18,7 @@ function Searched() {
       <NeededDiv>
       <StyledSVG onClick={submitHandler}></StyledSVG>
       <Input onChange={(e)=>{ setInput(e.target.value)}} type='text' placeholder={"Ho jewa eng today?"}/>
+      
       </NeededDiv>
       
     </FormStyle>
@@ -43,7 +45,14 @@ outline:none;
 color:white;
 width:100%;
 `
-
+const StyledHome = styled(BiHomeAlt2)`
+position: absolute;
+top :50%;
+left:0;
+transform: translate(100%,-50%);
+color:black;
+cursor:pointer;
+`
 const StyledSVG = styled(FaSearch)`
 position: absolute;
 top :50%;

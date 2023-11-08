@@ -22,7 +22,7 @@ function Cuisine() {
     <FoodGrid>
         {cuisine.map((item)=>{
             return (
-                <Link>
+                <Link to={'recipe/'+item.id}>
                     <Card key={item.id}>
                         <Image src={item.image}/>
                         <Hfour>{item.title}</Hfour>
