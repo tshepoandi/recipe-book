@@ -22,16 +22,20 @@ function Cuisine() {
     <FoodGrid>
         {cuisine.map((item)=>{
             return (
-                <div key={item.id}>
+                
+                <Card key={item.id}>
                     <Image src={item.image}/>
-                    <Hfour>{item.name}</Hfour>
-                </div>
+                    <Hfour>{item.title}</Hfour>
+                </Card>
             )
         })}
     </FoodGrid>
   )
 }
 
+const Card = styled.div`
+    
+`
 const FoodGrid = styled.div`
     display:grid;
     grid-template-columns: repeat()(auto-fit,minmax(20rem,1fr));
@@ -46,6 +50,8 @@ const Anchor = styled.a`
     text-decoration:none;
     `
 const Hfour = styled.h4`
-text-align:center;
-padding: 1rem;`
+    font-size:2rem;
+    font-weight:700;
+    text-align:center;
+    padding: 1rem;`
 export default Cuisine
