@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import Cuisine from "./Pages/Cuisine";
 import Search from "./Components/Search";
 import HandleSearch from "./Pages/handleSearch";
+import Recipe from "./Pages/Recipe";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/cuisine/:type" element={<Cuisine/>}/>
           <Route path="/searched/:search" element={<HandleSearch/>}/>
+          <Route path="/recipe/:name" element={<Recipe/>}/>
         </Routes>
       </BrowserRouter>
     </div>

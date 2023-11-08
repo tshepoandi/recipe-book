@@ -22,11 +22,13 @@ function Cuisine() {
     <FoodGrid>
         {cuisine.map((item)=>{
             return (
+                <Link>
+                    <Card key={item.id}>
+                        <Image src={item.image}/>
+                        <Hfour>{item.title}</Hfour>
+                    </Card>
+                </Link>
                 
-                <Card key={item.id}>
-                    <Image src={item.image}/>
-                    <Hfour>{item.title}</Hfour>
-                </Card>
             )
         })}
     </FoodGrid>
