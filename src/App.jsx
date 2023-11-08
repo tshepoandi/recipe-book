@@ -1,9 +1,14 @@
+import { BrowserRouter } from "react-router-dom";
+import Category from "./Components/Category";
 import Pages from "./Pages/Pages";
 
 function App() {
   return (
     <div>
-      <Pages/>
+      <BrowserRouter>
+        <Category/>
+        <Pages/>
+      </BrowserRouter>
     </div>
   );
 }
