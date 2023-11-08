@@ -34,12 +34,18 @@ function Cuisine() {
 }
 
 const Card = styled.div`
+   
     
 `
 const FoodGrid = styled.div`
-    display:grid;
-    grid-template-columns: repeat()(auto-fit,minmax(20rem,1fr));
+
+display: grid;
+grid-template-columns: repeat(3, 1fr);
     grid-gap: 3rem;
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);  /* 2 images in each row on smaller screens */
+    }
+    
 `
 
 const Image = styled.img`
