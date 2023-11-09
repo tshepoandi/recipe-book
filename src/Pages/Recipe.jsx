@@ -31,13 +31,16 @@ function Recipe() {
           </p>
         </div>
         )};
-        <ul>
-          {
-            details.extendedIngredients.map((i)=>(
-              <li>{i.original}</li>
-            ))
-          }
-        </ul>
+        {activeTab === 'ingredients' && (
+          <ul>
+            {
+              details.extendedIngredients.map((i)=>(
+                <li>{i.original}</li>
+              ))
+            }
+          </ul>
+        )}
+        
       </Info>
     </DetailWrapper>
   )
