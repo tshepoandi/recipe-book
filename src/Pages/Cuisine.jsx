@@ -17,18 +17,17 @@ function Cuisine() {
     useEffect(()=>{
         getCuisine(params.type)
     },[params.type])
-    // console.log(params)
+    console.log(cuisine)
     return (
     <FoodGrid>
         {cuisine.map((item)=>{
             return (
-                <Link to={'recipe/'+item.id}>
+                <Link to={'/recipe/'+item.id} key={item.id}>
                     <Card key={item.id}>
                         <Image src={item.image}/>
                         <Hfour>{item.title}</Hfour>
                     </Card>
                 </Link>
-                
             )
         })}
     </FoodGrid>

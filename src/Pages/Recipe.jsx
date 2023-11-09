@@ -10,6 +10,7 @@ function Recipe() {
     const data = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`)
     const detailData = await data.json()
     setDetails(detailData);
+    console.log(detailData)
   }
   useEffect(()=>{
     fetchDetail()
@@ -17,16 +18,27 @@ function Recipe() {
    
   return (
     <DetailWrapper>
-      hi
       <div>
         <h2>{details.title}</h2>
         <img src={details.image} alt={details.title} />
       </div>
-      {/* <Info>
+      <Info>
         <Button className={activeTab === 'instructions' ? 'active' : "" } onClick={()=> setActiveTab("instructions")}>Instructions</Button>
         <Button className={activeTab === 'ingredients' ? 'active' : "" } onClick={()=> setActiveTab("ingredients")}>Ingredients</Button>
-
-      </Info> */}
+        {activeTab === 'instructions' && (
+          <div>
+          <p dangerouslySetInnerHTML={{ __html: details.summary}} >
+          </p>
+        </div>
+        )};
+        <ul>
+          {
+            details.extendedIngredients.map((i)=>(
+              <li>{i.original}</li>
+            ))
+          }
+        </ul>
+      </Info>
     </DetailWrapper>
   )
 }
@@ -57,12 +69,17 @@ const Button = styled.button`
   color:#313131;
   background:white;
   border: 2px solid black;
+  height:50px;
   font-weight: 600;
 `
 
 const Info = styled.div`
   display:flex;
   margin-left:10rem;
+  flex-direction:column;
+  p{
+    font-size:10px;
+  }
 `
 
 export default Recipe
